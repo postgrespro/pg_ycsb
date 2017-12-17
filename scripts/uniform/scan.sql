@@ -1,6 +1,5 @@
-\set scan random(1, 10)
-\set scanlimit random(2, 10)
-
+\SET id random(1, 100000 * :scale)
+\SET scanlimit random(1, 100)
 BEGIN;
-SELECT * from pgbench_accounts where abalance>:scan limit :scanlimit;
+SELECT * FROM pgbench_accounts WHERE aid >= :id LIMIT :scanlimit;
 END;

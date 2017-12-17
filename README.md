@@ -71,8 +71,9 @@ pgbench postgres -f scripts/zipfian/read.sql -T60 -c10
 Not implemented yet.
 
 **Workload E:**
-
-Not implemented yet.
+```
+pgbench postgres -f scripts/zipfian/scan.sql@95 -f scripts/zipfian/insert.sql@5 -T60 -c10
+```
 
 **Workload F:**
 

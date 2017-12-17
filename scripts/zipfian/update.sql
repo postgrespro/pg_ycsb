@@ -1,7 +1,5 @@
--- UPDATE from YCSB workload
-\set aid random_zipfian(1, 100000 * :scale, :parameter)
-\set delta random_zipfian(-5000, 5000, :parameter)
-
+\SET id random_zipfian(1, 100000 * :scale, 0.99)
+\SET delta random(-5000, 5000)
 BEGIN;
-UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :id;
 END;

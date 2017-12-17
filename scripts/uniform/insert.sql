@@ -1,13 +1,4 @@
--- INSERT from YCSB workload
-\set nbranches :scale
-\set ntellers 10 * :scale
-\set naccounts 100000 * :scale
-
-\set aid random(1, 100000 * :scale)
-\set bid random(1, 1 * :scale)
-\set tid random(1, 10 * :scale)
-\set delta random(-5000, 5000)
-
+\SET id random(1, 100000 * :scale)
 BEGIN;
-INSERT into pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+INSERT INTO pgbench_accounts (aid, bid, abalance) VALUES (:id, 1, 0);
 END;

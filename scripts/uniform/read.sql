@@ -1,5 +1,4 @@
--- READ from YCSB workload
-\set read random(1, 10)
+\SET id random(1, 100000 * :scale)
 BEGIN;
-SELECT * from pgbench_accounts where aid = :read;
+SELECT * FROM pgbench_accounts WHERE aid = :id;
 END;

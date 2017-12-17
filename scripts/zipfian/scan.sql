@@ -1,6 +1,5 @@
-\set scan random_zipfian(1, 10, :parameter)
-\set scanlimit random(2, 10, :parameter)
-
+\SET id random_zipfian(1, 100000 * :scale, 0.99)
+\SET scanlimit random(1, 100)
 BEGIN;
-SELECT * from pgbench_accounts where abalance>:scan limit :scanlimit;
+SELECT * FROM pgbench_accounts WHERE aid >= :id LIMIT :scanlimit;
 END;

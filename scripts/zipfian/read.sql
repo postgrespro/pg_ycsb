@@ -1,5 +1,4 @@
--- READ from YCSB workload
-\set read random_zipfian(1, 10,:parameter)
+\SET id random_zipfian(1, 100000 * :scale, 0.99)
 BEGIN;
-SELECT * from pgbench_accounts where aid = :read;
+SELECT * FROM pgbench_accounts WHERE aid = :id;
 END;
