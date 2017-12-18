@@ -72,7 +72,7 @@ Not implemented yet.
 
 **Workload E:**
 ```
-pgbench postgres -f scripts/zipfian/scan.sql@95 -f scripts/zipfian/insert.sql@5 -T60 -c10
+pgbench postgres -f scripts/zipfian/scan.sql@95 -f scripts/uniform/insert.sql@5 -T60 -c10
 ```
 
 **Workload F:**

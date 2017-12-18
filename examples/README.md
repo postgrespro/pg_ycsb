@@ -11,5 +11,5 @@ psql <dbname> -f init_partition.sql -v pcount=10 -v scale=1
 Now let's perform workload C (100% read). The following command will run script for 60 seconds and utilize 10 connections:
 
 ```
-pgbench postgres ../scripts/zipfian/read.sql -T60 -c10
+pgbench <dbname> ../scripts/zipfian/read.sql -T60 -c10
 ```
